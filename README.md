@@ -1,32 +1,16 @@
 # Product Advertising API 5.0 SDK for PHP
 
-[![Version](https://img.shields.io/packagist/v/thewirecutter/paapi5-php-sdk)](https://img.shields.io/packagist/v/thewirecutter/paapi5-php-sdk) 
+[![Version](https://img.shields.io/packagist/v/amzn/paapi5-php-sdk)](https://img.shields.io/packagist/v/amzn/paapi5-php-sdk) 
 
-[![Total Downloads](https://img.shields.io/packagist/dt/thewirecutter/paapi5-php-sdk.svg?style=flat)](https://packagist.org/packages/thewirecutter/paapi5-php-sdk)
+[![Total Downloads](https://img.shields.io/packagist/dt/amzn/paapi5-php-sdk.svg?style=flat)](https://packagist.org/packages/amzn/paapi5-php-sdk)
 
 This repository contains the open source PHP SDK that allows you to access the [Product Advertising API](https://webservices.amazon.com/paapi5/documentation/index.html) from your PHP app.
 
-## Copy of Amazon's Provided Code
-
-This is a near identical public copy of [Amazon's provided code](https://webservices.amazon.com/paapi5/documentation/quick-start/using-sdk.html), as their version is not available through Packagist as of writing.
-
-We have not changed the API in any way, however we did cleanup portions of the code and have updated dependencies. A listing of changes are provided below.
-
-### Changes from Amazon
-
-* Replaced usage of `\GuzzleHttp\Psr7\build_query` with `\GuzzleHttp\Psr7\Query::build` https://github.com/thewirecutter/paapi5-php-sdk/pull/8
-* Added Support for Guzzle 7 https://github.com/thewirecutter/paapi5-php-sdk/pull/6
-* Removed Deprecation Warnings when using PHP 8 https://github.com/thewirecutter/paapi5-php-sdk/pull/13
-* Removed Dynamic Property Creation Warnings when using PHP 8 https://github.com/thewirecutter/paapi5-php-sdk/pull/13
-* Updated PHP Minimum Version to PHP 8 https://github.com/thewirecutter/paapi5-php-sdk/pull/13
-* CodeSniffed to PSR-2 https://github.com/thewirecutter/paapi5-php-sdk/pull/13
-* Updated Dev Dependencies to reflect PHP 8 version requirement https://github.com/thewirecutter/paapi5-php-sdk/pull/13
-
 ## Installation
-The Product Advertising API PHP SDK can be installed with [Composer](https://getcomposer.org/). The SDK is available via [Packagist](http://packagist.org/) under the [`thewirecutter/paapi5-php-sdk`](https://packagist.org/packages/thewirecutter/paapi5-php-sdk) package. If Composer is installed globally on your system, you can run the following in the base directory of your project to add the SDK as a dependency:
+The Product Advertising API PHP SDK can be installed with [Composer](https://getcomposer.org/). The SDK is available via [Packagist](http://packagist.org/) under the [`amzn/paapi5-php-sdk`](https://packagist.org/packages/amzn/paapi5-php-sdk) package. If Composer is installed globally on your system, you can run the following in the base directory of your project to add the SDK as a dependency:
 
 ```sh
-composer require thewirecutter/paapi5-php-sdk
+composer require amzn/paapi5-php-sdk
 ```
 
 ## Usage

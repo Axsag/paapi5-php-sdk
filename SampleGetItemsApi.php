@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2025 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -87,7 +87,7 @@ function getItems()
     # Request initialization
 
     # Choose item id(s)
-    $itemIds = ["059035342X", "B00X4WHP55", "1401263119"];
+    $itemIds = ["B09BWFX1L6", "B0CFPJYX7P"];
 
     /*
      * Choose resources you want from GetItemsResource enum
@@ -95,7 +95,7 @@ function getItems()
      */
     $resources = [
         GetItemsResource::ITEM_INFOTITLE,
-        GetItemsResource::OFFERSLISTINGSPRICE];
+        GetItemsResource::OFFERS_V2LISTINGSPRICE];
 
     # Forming the request
     $getItemsRequest = new GetItemsRequest();
@@ -142,12 +142,15 @@ function getItems()
                         if ($item->getDetailPageURL() !== null) {
                             echo 'Detail Page URL: ', $item->getDetailPageURL(), PHP_EOL;
                         }
-                        if ($item->getOffers() !== null and
-                            $item->getOffers()->getListings() !== null
-                            and $item->getOffers()->getListings()[0]->getPrice() !== null
-                            and $item->getOffers()->getListings()[0]->getPrice()->getDisplayAmount() !== null) {
-                            echo 'Buying price: ', $item->getOffers()->getListings()[0]->getPrice()
-                                ->getDisplayAmount(), PHP_EOL;
+                        if ($item->getOffersV2() !== null and
+                            $item->getOffersV2()->getListings() !== null
+                            and $item->getOffersV2()->getListings()[0]->getPrice() !== null
+                            and $item->getOffersV2()->getListings()[0]->getPrice()->getMoney() !== null
+                            and $item->getOffersV2()->getListings()[0]->getPrice()->getMoney()->getDisplayAmount() !==
+                        null
+                        ) {
+                            echo 'Buying price: ', $item->getOffersV2()->getListings()[0]->getPrice()
+                                ->getMoney()->getDisplayAmount(), PHP_EOL;
                         }
                     } else {
                         echo "Item not found, check errors", PHP_EOL;
@@ -272,10 +275,10 @@ function getItemsWithHttpInfo()
                         if ($item->getDetailPageURL() !== null) {
                             echo 'Detail Page URL: ', $item->getDetailPageURL(), PHP_EOL;
                         }
-                        if ($item->getOffers() !== null and $item->getOffers()->getListings() !== null
-                            and $item->getOffers()->getListings()[0]->getPrice() !== null
-                            and $item->getOffers()->getListings()[0]->getPrice()->getDisplayAmount() !== null) {
-                            echo 'Buying price: ', $item->getOffers()->getListings()[0]->getPrice()
+                        if ($item->getOffersV2() !== null and $item->getOffersV2()->getListings() !== null
+                            and $item->getOffersV2()->getListings()[0]->getPrice() !== null
+                            and $item->getOffersV2()->getListings()[0]->getPrice()->getDisplayAmount() !== null) {
+                            echo 'Buying price: ', $item->getOffersV2()->getListings()[0]->getPrice()
                                 ->getDisplayAmount(), PHP_EOL;
                         }
                     } else {
@@ -407,10 +410,10 @@ function getItemsAsync()
                         if ($item->getDetailPageURL() !== null) {
                             echo 'Detail Page URL: ', $item->getDetailPageURL(), PHP_EOL;
                         }
-                        if ($item->getOffers() !== null and $item->getOffers()->getListings() !== null
-                            and $item->getOffers()->getListings()[0]->getPrice() !== null
-                            and $item->getOffers()->getListings()[0]->getPrice()->getDisplayAmount() !== null) {
-                            echo 'Buying price: ', $item->getOffers()->getListings()[0]->getPrice()
+                        if ($item->getOffersV2() !== null and $item->getOffersV2()->getListings() !== null
+                            and $item->getOffersV2()->getListings()[0]->getPrice() !== null
+                            and $item->getOffersV2()->getListings()[0]->getPrice()->getDisplayAmount() !== null) {
+                            echo 'Buying price: ', $item->getOffersV2()->getListings()[0]->getPrice()
                                 ->getDisplayAmount(), PHP_EOL;
                         }
                     } else {
@@ -546,10 +549,10 @@ function getItemsAsyncWithHttpInfo()
                         if ($item->getDetailPageURL() !== null) {
                             echo 'Detail Page URL: ', $item->getDetailPageURL(), PHP_EOL;
                         }
-                        if ($item->getOffers() !== null and $item->getOffers()->getListings() !== null
-                            and $item->getOffers()->getListings()[0]->getPrice() !== null
-                            and $item->getOffers()->getListings()[0]->getPrice()->getDisplayAmount() !== null) {
-                            echo 'Buying price: ', $item->getOffers()->getListings()[0]->getPrice()
+                        if ($item->getOffersV2() !== null and $item->getOffersV2()->getListings() !== null
+                            and $item->getOffersV2()->getListings()[0]->getPrice() !== null
+                            and $item->getOffersV2()->getListings()[0]->getPrice()->getDisplayAmount() !== null) {
+                            echo 'Buying price: ', $item->getOffersV2()->getListings()[0]->getPrice()
                                 ->getDisplayAmount(), PHP_EOL;
                         }
                     } else {
