@@ -6,11 +6,22 @@
 
 This repository contains the open source PHP SDK that allows you to access the [Product Advertising API](https://webservices.amazon.com/paapi5/documentation/index.html) from your PHP app.
 
+This is a fork that support V2
+
 ## Installation
 The Product Advertising API PHP SDK can be installed with [Composer](https://getcomposer.org/). The SDK is available via [Packagist](http://packagist.org/) under the [`amzn/paapi5-php-sdk`](https://packagist.org/packages/amzn/paapi5-php-sdk) package. If Composer is installed globally on your system, you can run the following in the base directory of your project to add the SDK as a dependency:
 
+USE AS VCS
 ```sh
-composer require amzn/paapi5-php-sdk
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Axsag/paapi5-php-sdk"
+        }
+    ],
+    "require": {
+        "axsag/paapi5-php-sdk": "dev-main",
+    }
 ```
 
 ## Usage
